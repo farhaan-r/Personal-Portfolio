@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Farhaan Rashid",
     description: "CS & Mathematics student | Machine Learning | Backend Systems",
-    url: "https://farhaan-r.vercel.app",
+    url: "https://farhaanrashid.vercel.app",
     type: "website",
   },
 };
