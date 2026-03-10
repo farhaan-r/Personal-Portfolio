@@ -35,10 +35,10 @@ export default function Contact() {
           <div className="container">
             <p className="section-label fade-up">Contact</p>
             <h1 className="fade-up fade-up-1 section-title" style={{ maxWidth: "480px" }}>
-              Let's get in touch
+              Let&apos;s get in touch
             </h1>
             <p className="fade-up fade-up-2 section-subtitle">
-              I'm open to internships, research roles, and interesting projects. Feel free
+              I&apos;m open to internships, research roles, and interesting projects. Feel free
               to reach out through any of the channels below.
             </p>
           </div>
