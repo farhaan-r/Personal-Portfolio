@@ -15,6 +15,18 @@ const timeline = [
     desc: "Switched from Information Technology after developing a deep interest in algorithms, machine learning, and applied mathematics. Currently focused on ML systems and quantitative reasoning.",
   },
   {
+    year: "2025 – 2026",
+    title: "Machine Learning Consulting",
+    org: "Whiley Group",
+    desc: "",
+  },
+  {
+    year: "2024 – 2024",
+    title: "Data Analytics Intern",
+    org: "Caliba Group",
+    desc: "",
+  },
+  {
     year: "2023 – 2023",
     title: "Information Technology",
     org: "University of Queensland",
