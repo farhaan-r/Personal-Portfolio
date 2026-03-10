@@ -1,0 +1,55 @@
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  tech: string[];
+  github?: string;
+  demo?: string;
+  highlights: string[];
+  featured: boolean;
+}
+
+export const projects: Project[] = [
+  {
+    id: "warehouse-cv",
+    title: "Warehouse Computer Vision",
+    description:
+      "Real-time object classification system for warehouse inventory management using GPU-accelerated deep learning.",
+    longDescription:
+      "Developed a real-time object classification system to automate stock identification in warehouse environments. The system uses a custom-trained deep learning model with GPU-accelerated inference to classify inventory items from camera feeds, dramatically reducing manual tracking overhead.",
+    tech: ["Python", "PyTorch", "CUDA", "OpenCV", "NumPy"],
+    github: "https://github.com/farhaan-r",
+    highlights: [
+      "GPU-accelerated inference pipeline",
+      "Custom image preprocessing and augmentation",
+      "Real-time classification from live camera feeds",
+      "Automated inventory tracking integration",
+    ],
+    featured: true,
+  },
+  {
+    id: "vqvae-ml",
+    title: "VQVAE2 Image Generation",
+    description:
+      "Research into generative models using Vector Quantized Variational Autoencoders for high-fidelity image synthesis.",
+    longDescription:
+      "Explored hierarchical latent representations using VQVAE2 architecture for image generation. Investigated the trade-offs between codebook size, commitment loss, and reconstruction fidelity, with experiments on learning discrete latent spaces.",
+    tech: ["Python", "PyTorch", "CUDA", "Matplotlib", "NumPy"],
+    github: "https://github.com/farhaan-r",
+    highlights: [
+      "Implemented hierarchical VQVAE2 from scratch",
+      "Experiments on codebook size vs reconstruction quality",
+      "Custom training loop with commitment and codebook losses",
+      "Latent space visualisation and analysis",
+    ],
+    featured: true,
+  },
+];
+
+export const skills = {
+  Languages: ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
+  Frameworks: ["React", "Next.js", "PyTorch", "FastAPI", "Node.js"],
+  Tools: ["CUDA", "Git", "Docker", "Linux", "Vercel"],
+  Domains: ["Machine Learning", "Computer Vision", "Backend Systems", "Data Engineering"],
+};
