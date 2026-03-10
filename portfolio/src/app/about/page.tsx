@@ -12,31 +12,25 @@ const timeline = [
     year: "2024 – Present",
     title: "Computer Science & Mathematics",
     org: "University of Queensland",
-    desc: "Switched from Information Technology after developing a deep interest in algorithms, machine learning, and applied mathematics. Currently focused on ML systems and quantitative reasoning.",
+    desc: "Switched from Information Technology after developing a deep interest in algorithms, machine learning, and applied mathematics. Currently focused on Mathematical AI and Computer Systems.",
   },
   {
     year: "2025 – 2026",
     title: "Machine Learning Consulting",
     org: "Whiley Group",
-    desc: "",
+    desc: "Design and deliver scenario‐based AI solutions for government teams, focusing on practical workflow integration, ethical use, and real-world decision-making. ",
   },
   {
     year: "2024 – 2024",
     title: "Data Analytics Intern",
     org: "Caliba Group",
-    desc: "",
+    desc: "Designed and implemented data processing pipelines to standardise and validate 50,000+ records, improving data integrity and consistency.",
   },
   {
     year: "2023 – 2023",
     title: "Information Technology",
     org: "University of Queensland",
     desc: "Started in IT before pivoting to CS and Mathematics, driven by curiosity about the engineering behind intelligent systems.",
-  },
-  {
-    year: "2023 – Present",
-    title: "Team Member",
-    org: "Coles Group",
-    desc: "Developed teamwork, communication, and time management skills in a fast-paced environment alongside my studies.",
   },
 ];
 
