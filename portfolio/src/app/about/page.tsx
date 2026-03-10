@@ -9,19 +9,19 @@ export const metadata: Metadata = {
 
 const timeline = [
   {
-    year: "2023 – Present",
+    year: "2024 – Present",
     title: "Computer Science & Mathematics",
-    org: "University",
+    org: "University of Queensland",
     desc: "Switched from Information Technology after developing a deep interest in algorithms, machine learning, and applied mathematics. Currently focused on ML systems and quantitative reasoning.",
   },
   {
-    year: "2022 – 2023",
+    year: "2023 – 2023",
     title: "Information Technology",
-    org: "University",
+    org: "University of Queensland",
     desc: "Started in IT before pivoting to CS and Mathematics, driven by curiosity about the engineering behind intelligent systems.",
   },
   {
-    year: "2022 – Present",
+    year: "2023 – Present",
     title: "Team Member",
     org: "Coles Group",
     desc: "Developed teamwork, communication, and time management skills in a fast-paced environment alongside my studies.",
@@ -65,7 +65,7 @@ export default function About() {
                 maxWidth: "580px",
               }}
             >
-              I'm Farhaan — a Computer Science and Mathematics student with a passion for
+              I am Farhaan — a Computer Science and Mathematics student with a passion for
               machine learning and systems that solve real problems. I switched degrees after
               realising I wanted to go deeper than IT: into the algorithms, the maths, and
               the engineering that power intelligent systems.
