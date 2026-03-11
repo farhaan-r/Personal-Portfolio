@@ -62,8 +62,8 @@ export const projects: Project[] = [
 ];
 
 export const skills = {
-  Languages: ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
-  Frameworks: ["React", "Next.js", "PyTorch", "FastAPI", "Node.js"],
-  Tools: ["CUDA", "Git", "Docker", "Linux", "Vercel"],
+  Languages: ["Java", "Python", "C", "TypeScript", "JavaScript", "SQL"],
+  Frameworks: ["React", "PyTorch", "Next.js", "FastAPI", "Node.js"],
+  Tools: ["CUDA", "Git", "Linux", "Docker", "Vercel"],
   Domains: ["Machine Learning", "Computer Vision", "Backend Systems", "Data Engineering"],
 };
