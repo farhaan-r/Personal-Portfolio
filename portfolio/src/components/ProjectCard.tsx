@@ -31,23 +31,96 @@ export default function ProjectCard({ project, index = 0 }: Props) {
         (e.currentTarget as HTMLDivElement).style.borderColor = "var(--border)";
       }}
     >
-      {/* Project image */}
-      {project.image && (
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: 220,
-            overflow: "hidden",
-            background: "var(--accent-light)",
-          }}
-        >
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            style={{ objectFit: "cover" }}
-          />
+      {/* Single image */}
+      {project.image && !project.comparison && (
+        <div style={{ position: "relative", width: "100%", height: 220, overflow: "hidden", background: "var(--accent-light)" }}>
+          <Image src={project.image} alt={project.title} fill style={{ objectFit: "cover" }} />
+        </div>
+      )}
+
+      {/* Side-by-side comparison */}
+      {project.comparison && (
+        <div style={{ width: "100%", background: "#0f0f0f" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", height: 220 }}>
+            {/* Before */}
+            <div style={{ position: "relative", overflow: "hidden" }}>
+              <Image
+                src={project.comparison.before}
+                alt={project.comparison.beforeLabel ?? "Before"}
+                fill
+                style={{ objectFit: "cover" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: 10,
+                  left: 10,
+                  background: "rgba(0,0,0,0.65)",
+                  color: "#fff",
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "3px 8px",
+                  borderRadius: "4px",
+                  backdropFilter: "blur(4px)",
+                }}
+              >
+                {project.comparison.beforeLabel ?? "Before"}
+              </span>
+            </div>
+
+            {/* Divider */}
+            <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 2, background: "rgba(255,255,255,0.3)", zIndex: 2, transform: "translateX(-50%)", pointerEvents: "none" }} />
+
+            {/* After */}
+            <div style={{ position: "relative", overflow: "hidden" }}>
+              <Image
+                src={project.comparison.after}
+                alt={project.comparison.afterLabel ?? "After"}
+                fill
+                style={{ objectFit: "cover" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: 10,
+                  left: 10,
+                  background: "rgba(26,86,219,0.8)",
+                  color: "#fff",
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "3px 8px",
+                  borderRadius: "4px",
+                  backdropFilter: "blur(4px)",
+                }}
+              >
+                {project.comparison.afterLabel ?? "After"}
+              </span>
+            </div>
+          </div>
+
+          {/* Caption bar */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+              padding: "8px 16px",
+              background: "#0f0f0f",
+            }}
+          >
+            <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.06em" }}>
+              ← Original
+            </span>
+            <span style={{ width: 32, height: 1, background: "rgba(255,255,255,0.2)", display: "inline-block" }} />
+            <span style={{ fontSize: "11px", color: "rgba(26,86,219,0.9)", letterSpacing: "0.06em", fontWeight: 600 }}>
+              Generated →
+            </span>
+          </div>
         </div>
       )}
 

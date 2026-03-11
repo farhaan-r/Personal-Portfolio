@@ -134,7 +134,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/me.jpg"
+                    src="/me.jpeg"
                     alt="Farhaan Rashid"
                     fill
                     style={{ objectFit: "cover" }}
@@ -254,7 +254,7 @@ export default function Home() {
                 marginBottom: "16px",
               }}
             >
-              Let's work together
+              Let&apos;s work together
             </h2>
             <p style={{ color: "rgba(255,255,255,0.6)", marginBottom: "32px", fontSize: "1rem" }}>
               Open to internships, research roles, and interesting projects.

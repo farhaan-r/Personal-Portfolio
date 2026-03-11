@@ -9,6 +9,12 @@ export interface Project {
   highlights: string[];
   featured: boolean;
   image?: string;
+  comparison?: {
+    before: string;
+    after: string;
+    beforeLabel?: string;
+    afterLabel?: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -38,7 +44,7 @@ export const projects: Project[] = [
     longDescription:
       "Explored hierarchical latent representations using VQVAE2 architecture for image generation. Investigated the trade-offs between codebook size, commitment loss, and reconstruction fidelity, with experiments on learning discrete latent spaces.",
     tech: ["Python", "PyTorch", "CUDA", "Matplotlib", "NumPy"],
-    github: "https://github.com/farhaan-r",
+    github: "https://github.com/farhaan-r/COMP3710-Project/tree/topic-recognition/recognition/VQVAE_s4803279",
     highlights: [
       "Implemented hierarchical VQVAE2 from scratch",
       "Experiments on codebook size vs reconstruction quality",
@@ -46,7 +52,12 @@ export const projects: Project[] = [
       "Latent space visualisation and analysis",
     ],
     featured: true,
-    image: "/projects/vqvae.jpg",
+    comparison: {
+      before: "/projects/vqvae_original.png",
+      after: "/projects/vqvae_generated.png",
+      beforeLabel: "Original",
+      afterLabel: "Generated",
+    },
   },
 ];
 
