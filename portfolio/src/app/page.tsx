@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProjectCard from "../components/ProjectCard";
 import { projects, skills } from "../data/projects";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -22,7 +23,6 @@ export default function Home() {
             overflow: "hidden",
           }}
         >
-          {/* Subtle background grid */}
           <div
             aria-hidden
             style={{
@@ -35,74 +35,114 @@ export default function Home() {
           />
 
           <div className="container">
-            <div style={{ maxWidth: "700px" }}>
-              <p className="section-label fade-up" style={{ marginBottom: "20px" }}>
-                Available for internships & roles
-              </p>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "64px",
+              flexWrap: "wrap",
+            }}>
 
-              <h1
-                className="fade-up fade-up-1"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
-                  lineHeight: 1.08,
-                  letterSpacing: "-0.02em",
-                  color: "var(--text-primary)",
-                  marginBottom: "24px",
-                }}
-              >
-                Farhaan Rashid
-              </h1>
+              {/* Text */}
+              <div style={{ flex: "1", minWidth: "280px", maxWidth: "580px" }}>
+                <p className="section-label fade-up" style={{ marginBottom: "20px" }}>
+                  Available for internships & roles
+                </p>
 
-              <p
+                <h1
+                  className="fade-up fade-up-1"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
+                    lineHeight: 1.08,
+                    letterSpacing: "-0.02em",
+                    color: "var(--text-primary)",
+                    marginBottom: "24px",
+                  }}
+                >
+                  Farhaan Rashid
+                </h1>
+
+                <p
+                  className="fade-up fade-up-2"
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "var(--text-secondary)",
+                    lineHeight: 1.75,
+                    marginBottom: "36px",
+                  }}
+                >
+                  CS & Mathematics student building at the intersection of{" "}
+                  <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
+                    machine learning
+                  </em>
+                  ,{" "}
+                  <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
+                    computer vision
+                  </em>
+                  , and{" "}
+                  <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
+                    backend systems
+                  </em>
+                  .
+                </p>
+
+                <div className="fade-up fade-up-3" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                  <Link href="/projects" className="btn btn-primary">
+                    View Projects →
+                  </Link>
+                  <a
+                    href="https://github.com/farhaan-r"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    GitHub ↗
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/farhaanrashid/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    LinkedIn ↗
+                  </a>
+                  <Link href="/contact" className="btn btn-outline">
+                    Contact
+                  </Link>
+                </div>
+              </div>
+
+              {/* Profile photo */}
+              <div
                 className="fade-up fade-up-2"
                 style={{
-                  fontSize: "1.15rem",
-                  color: "var(--text-secondary)",
-                  lineHeight: 1.75,
-                  marginBottom: "36px",
-                  maxWidth: "560px",
+                  flexShrink: 0,
+                  display: "flex",
+                  justifyContent: "center",
                 }}
               >
-                CS & Mathematics student building at the intersection of{" "}
-                <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
-                  machine learning
-                </em>
-                ,{" "}
-                <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
-                  computer vision
-                </em>
-                , and{" "}
-                <em style={{ color: "var(--text-primary)", fontStyle: "normal", fontWeight: 500 }}>
-                  backend systems
-                </em>
-                .
-              </p>
-
-              <div className="fade-up fade-up-3" style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <Link href="/projects" className="btn btn-primary">
-                  View Projects →
-                </Link>
-                <a
-                  href="https://github.com/farhaan-r"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
+                <div
+                  style={{
+                    width: 260,
+                    height: 260,
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "4px solid var(--border)",
+                    boxShadow: "var(--shadow-lg)",
+                    position: "relative",
+                  }}
                 >
-                  GitHub ↗
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/farhaanrashid/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  LinkedIn ↗
-                </a>
-                <Link href="/contact" className="btn btn-outline">
-                  Contact
-                </Link>
+                  <Image
+                    src="/me.jpg"
+                    alt="Farhaan Rashid"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -204,12 +244,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section
-          style={{
-            background: "var(--text-primary)",
-            padding: "80px 0",
-          }}
-        >
+        <section style={{ background: "var(--text-primary)", padding: "80px 0" }}>
           <div className="container" style={{ textAlign: "center" }}>
             <h2
               style={{
@@ -219,7 +254,7 @@ export default function Home() {
                 marginBottom: "16px",
               }}
             >
-              Let&apos;s work together
+              Let's work together
             </h2>
             <p style={{ color: "rgba(255,255,255,0.6)", marginBottom: "32px", fontSize: "1rem" }}>
               Open to internships, research roles, and interesting projects.

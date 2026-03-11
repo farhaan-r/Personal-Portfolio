@@ -8,6 +8,7 @@ export interface Project {
   demo?: string;
   highlights: string[];
   featured: boolean;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +28,7 @@ export const projects: Project[] = [
       "Automated inventory tracking integration",
     ],
     featured: true,
+    image: "/projects/warehouse.jpg",
   },
   {
     id: "vqvae-ml",
@@ -44,6 +46,7 @@ export const projects: Project[] = [
       "Latent space visualisation and analysis",
     ],
     featured: true,
+    image: "/projects/vqvae.jpg",
   },
 ];
 
