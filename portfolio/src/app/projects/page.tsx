@@ -26,7 +26,7 @@ export default function Projects() {
               className="fade-up fade-up-2 section-subtitle"
             >
               A selection of engineering and research projects spanning machine learning,
-              computer vision, and quantitative systems.
+              computer vision, and data analytics.
             </p>
           </div>
         </section>

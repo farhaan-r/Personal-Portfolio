@@ -40,7 +40,7 @@ export const projects: Project[] = [
     id: "vqvae-ml",
     title: "VQVAE2 Image Generation",
     description:
-      "Research into generative models using Vector Quantized Variational Autoencoders for high-fidelity image synthesis.",
+      "Research into generative models using Vector Quantized Variational Autoencoders for high-fidelity image synthesis on Hip MRI data.",
     longDescription:
       "Explored hierarchical latent representations using VQVAE2 architecture for image generation. Investigated the trade-offs between codebook size, commitment loss, and reconstruction fidelity, with experiments on learning discrete latent spaces.",
     tech: ["Python", "PyTorch", "CUDA", "Matplotlib", "NumPy"],
@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "Implemented hierarchical VQVAE2 from scratch",
       "Experiments on codebook size vs reconstruction quality",
       "Custom training loop with commitment and codebook losses",
-      "Latent space visualisation and analysis",
+      "Generated authentic looking images of hip MRI scans",
     ],
     featured: true,
     comparison: {

@@ -7,30 +7,33 @@ export const metadata: Metadata = {
   description: "CS & Mathematics student. Background, interests, and experience.",
 };
 
-const timeline = [
+const education = [
   {
-    year: "2024 – Present",
+    year: "Feb 2024 – Present",
     title: "Computer Science & Mathematics",
     org: "University of Queensland",
     desc: "Switched from Information Technology after developing a deep interest in algorithms, machine learning, and applied mathematics. Currently focused on Mathematical AI and Computer Systems.",
   },
   {
-    year: "2025 – 2026",
-    title: "Machine Learning Consulting",
+    year: "Feb 2023 – Dec 2023",
+    title: "Information Technology",
+    org: "University of Queensland",
+    desc: "Started in IT before pivoting to CS and Mathematics, driven by curiosity about the Computer Systems and Artificial Intelligence.",
+  },
+];
+
+const experience = [
+  {
+    year: "Nov 2025 – Feb 2026",
+    title: "Machine Learning Consultant",
     org: "Whiley Group",
     desc: "Design and deliver scenario‐based AI solutions for government teams, focusing on practical workflow integration, ethical use, and real-world decision-making. ",
   },
   {
-    year: "2024 – 2024",
+    year: "Dec 2023 – Feb 2024",
     title: "Data Analytics Intern",
     org: "Caliba Group",
     desc: "Designed and implemented data processing pipelines to standardise and validate 50,000+ records, improving data integrity and consistency.",
-  },
-  {
-    year: "2023 – 2023",
-    title: "Information Technology",
-    org: "University of Queensland",
-    desc: "Started in IT before pivoting to CS and Mathematics, driven by curiosity about the engineering behind intelligent systems.",
   },
 ];
 
@@ -41,6 +44,47 @@ const interests = [
   { title: "Backend Systems", desc: "APIs, data pipelines, scalable infrastructure." },
 ];
 
+function TimelineItem({ year, title, org, desc }: { year: string; title: string; org: string; desc: string }) {
+  return (
+    <div
+      style={{
+        padding: "24px 0",
+        borderBottom: "1px solid var(--border)",
+      }}
+    >
+      <span style={{ fontSize: "12px", color: "var(--text-muted)", fontWeight: 500 }}>
+        {year}
+      </span>
+      <h3
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "1.05rem",
+          color: "var(--text-primary)",
+          marginTop: "6px",
+          marginBottom: "4px",
+        }}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          fontSize: "12px",
+          color: "var(--accent)",
+          fontWeight: 500,
+          marginBottom: "10px",
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+        }}
+      >
+        {org}
+      </p>
+      <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.65 }}>
+        {desc}
+      </p>
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <>
@@ -48,12 +92,7 @@ export default function About() {
       <main style={{ paddingTop: "var(--nav-height)" }}>
 
         {/* Header */}
-        <section
-          style={{
-            padding: "80px 0 64px",
-            borderBottom: "1px solid var(--border)",
-          }}
-        >
+        <section style={{ padding: "80px 0 64px", borderBottom: "1px solid var(--border)" }}>
           <div className="container">
             <p className="section-label fade-up">About</p>
             <h1
@@ -71,10 +110,10 @@ export default function About() {
                 maxWidth: "580px",
               }}
             >
-              I am Farhaan — a Computer Science and Mathematics student with a passion for
+              I&apos;m Farhaan, a Computer Science and Mathematics student with a passion for
               machine learning and systems that solve real problems. I switched degrees after
-              realising I wanted to go deeper than IT: into the algorithms, the maths, and
-              the engineering that power intelligent systems.
+              realising I wanted to go deeper than Information Technology, into the algorithms, the maths, and
+              the engineering that powers intelligent systems.
             </p>
           </div>
         </section>
@@ -84,7 +123,6 @@ export default function About() {
           <div className="container">
             <p className="section-label">What I care about</p>
             <h2 className="section-title">Interests & Focus Areas</h2>
-
             <div
               style={{
                 display: "grid",
@@ -104,14 +142,7 @@ export default function About() {
                     borderRadius: "var(--radius)",
                   }}
                 >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: "1.1rem",
-                      marginBottom: "10px",
-                      color: "var(--text-primary)",
-                    }}
-                  >
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", marginBottom: "10px", color: "var(--text-primary)" }}>
                     {item.title}
                   </h3>
                   <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
@@ -123,76 +154,72 @@ export default function About() {
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Education & Experience — side by side */}
         <section
           className="section"
           style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)" }}
         >
           <div className="container">
             <p className="section-label">Background</p>
-            <h2 className="section-title">Education & Experience</h2>
+            <h2 className="section-title" style={{ marginBottom: "48px" }}>Education & Experience</h2>
 
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0",
-                marginTop: "40px",
-                maxWidth: "680px",
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "48px",
               }}
             >
-              {timeline.map((item, i) => (
+              {/* Education column */}
+              <div>
                 <div
-                  key={i}
-                  className={`fade-up fade-up-${i + 1}`}
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "140px 1fr",
-                    gap: "24px",
-                    padding: "28px 0",
-                    borderBottom: i < timeline.length - 1 ? "1px solid var(--border)" : "none",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginBottom: "4px",
+                    paddingBottom: "16px",
+                    borderBottom: "2px solid var(--text-primary)",
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: "12px",
-                      color: "var(--text-muted)",
-                      fontWeight: 500,
-                      paddingTop: "3px",
-                    }}
-                  >
-                    {item.year}
-                  </span>
-                  <div>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "1.1rem",
-                        color: "var(--text-primary)",
-                        marginBottom: "4px",
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: "12px",
-                        color: "var(--accent)",
-                        fontWeight: 500,
-                        marginBottom: "10px",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                      }}
-                    >
-                      {item.org}
-                    </p>
-                    <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.65 }}>
-                      {item.desc}
-                    </p>
-                  </div>
+                  <span style={{ fontSize: "18px" }}>🎓</span>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "var(--text-primary)" }}>
+                    Education
+                  </h3>
                 </div>
-              ))}
+                {education.map((item, i) => (
+                  <TimelineItem key={i} {...item} />
+                ))}
+              </div>
+
+              {/* Experience column */}
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    marginBottom: "4px",
+                    paddingBottom: "16px",
+                    borderBottom: "2px solid var(--text-primary)",
+                  }}
+                >
+                  <span style={{ fontSize: "18px" }}>💼</span>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "var(--text-primary)" }}>
+                    Experience
+                  </h3>
+                </div>
+                {experience.map((item, i) => (
+                  <TimelineItem key={i} {...item} />
+                ))}
+              </div>
             </div>
+
+            <style>{`
+              @media (max-width: 640px) {
+                .edu-exp-grid { grid-template-columns: 1fr !important; }
+              }
+            `}</style>
           </div>
         </section>
 
@@ -212,14 +239,7 @@ export default function About() {
               }}
             >
               <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "1.5rem",
-                    color: "var(--text-primary)",
-                    marginBottom: "8px",
-                  }}
-                >
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "var(--text-primary)", marginBottom: "8px" }}>
                   Want to connect?
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem" }}>
@@ -227,18 +247,10 @@ export default function About() {
                 </p>
               </div>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <a
-                  href="https://www.linkedin.com/in/farhaanrashid/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
+                <a href="https://www.linkedin.com/in/farhaanrashid/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                   LinkedIn ↗
                 </a>
-                <a
-                  href="mailto:farhaan.rash@gmail.com"
-                  className="btn btn-outline"
-                >
+                <a href="mailto:farhaan.rash@gmail.com" className="btn btn-outline">
                   Email me
                 </a>
               </div>
