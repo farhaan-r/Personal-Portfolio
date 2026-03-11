@@ -34,7 +34,7 @@ export const projects: Project[] = [
       "Automated inventory tracking integration",
     ],
     featured: true,
-    image: "/projects/warehouse.jpg",
+    image: "/projects/warehouse.png",
   },
   {
     id: "vqvae-ml",
